@@ -29,7 +29,7 @@ class Cell:
                                  pygame.Rect(self.col * CELL_SIZE,
                                              self.row * CELL_SIZE, CELL_SIZE, CELL_SIZE), 3)
             elif self.col == 0:
-                pygame.draw.rect(screen, (255, 0, 0),
+                pygame.draw.rect(screen, (255, 0, 0), # fixes red rectangle alignment to look nicer
                                  pygame.Rect(self.col * CELL_SIZE,
                                              self.row * CELL_SIZE + LINE_WIDTH // 2, CELL_SIZE, CELL_SIZE - 1), 3)
             elif self.row == 0:
@@ -231,7 +231,7 @@ def reset_button(screen):  # this shows the reset button on the screen
     reset_rect = reset_render.get_rect()
     reset_rect.center = rect1.center  # centering text to the center of rectangle
     screen.blit(reset_render, reset_rect)  # drawing button text
-    return rect1
+    return rect1 # returns rectangle to be used for collidepoint function in main
 
 
 def restart_button(screen):  # this shows the restart button on the screen
